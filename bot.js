@@ -26,7 +26,14 @@ const sql = require("sqlite");
 ,ti={}  
 ,spee={};
 
-
+client.on('ready', () => {
+  console.log(`-------------------------------
+  [Start] ${new Date()}`);
+  console.log(`[INFO] [Bot Name : ${client.user.username}. ]`)
+  console.log(`[BOT] By : JoyBOT
+  -------------------------------`)
+    client.user.setActivity(`-help  | ${client.guilds.size} SooN.`)
+  });
 
 var guilds = {};
 client.on('guildBanAdd', function(guild) {
@@ -1090,7 +1097,7 @@ function getValue(key, array) {
     if(!message.channel.guild) return message.channel.send('**هذا الأمر فقط للسيرفرات**').then(m => m.delete(5000));
   if(!message.member.hasPermission('ADMINISTRATOR')) return      message.channel.send('**للأسف لا تمتلك صلاحية** `ADMINISTRATOR`' );
     let args = message.content.split(" ").join(" ").slice(2 + prefix.length);
-    let copy = "WestCostBot";
+    let copy = "Fèarless SysTem";
     let request = `Requested By ${message.author.username}`;
     if (!args) return message.reply('**يجب عليك كتابة كلمة او جملة لإرسال البرودكاست**');message.channel.send(`**هل أنت متأكد من إرسالك البرودكاست؟ \nمحتوى البرودكاست:** \` ${args}\``).then(msg => {
     msg.react('✅')
